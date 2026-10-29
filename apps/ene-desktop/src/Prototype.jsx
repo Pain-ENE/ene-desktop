@@ -1,3 +1,4 @@
+import AnimatedCharacter from "./AnimatedCharacter.jsx";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowUp,
@@ -18,6 +19,8 @@ import {
 const role = new URLSearchParams(location.search).get("surface") || "preview";
 const native = role === "preview" ? undefined : window.ene;
 const initial = {
+  motionEnabled: true,
+  motionOrigin: Date.now(),
   phase: "idle",
   scale: 0.8,
   pose: role === "preview" ? "seated" : "idle",
@@ -54,6 +57,7 @@ function useCompanion() {
         return { ...previous, chatVisible: true, bubbleVisible: false };
       if (action === "bubble-hold")
         return { ...previous, bubbleHeld: value === true };
+      if (action === "motion-enabled") return { ...previous, motionEnabled: value === true };
       if (action === "scale") return { ...previous, scale: value };
       if (action === "pose") return { ...previous, pose: value };
       if (action === "reset-position")
@@ -332,6 +336,10 @@ function Preferences({ state, command, close }) {
             />
             <Plus size={16} />
           </div>
+          <label className="setting-row">
+            呼吸与轻摆
+            <input type="checkbox" checked={state.motionEnabled !== false} onChange={e => command("motion-enabled", e.target.checked)} />
+          </label>
           <div className="setting-row">
             <label htmlFor="pose">姿态</label>
             <select
@@ -660,10 +668,11 @@ function Pet({ state }) {
         native?.command("menu");
       }}
     >
-      <img
-        className="pet-image"
-        src={`./assets/ene-${state.pose}.png`}
-        alt="ENE，拖动可移动，右键打开菜单"
+      <AnimatedCharacter
+        state={state}
+        onMotionActive={active => native?.command("motion-active", active)}
+        className="pet-image animated-character"
+        aria-label="ENE，拖动可移动，右键打开菜单"
         draggable="false"
         role="button"
         tabIndex={0}
@@ -717,7 +726,7 @@ function Practice() {
       <p>
         ENE 可以坐在选中的窗口边缘。
         <br />
-        在桌面版选择窗口后，她会跟随窗口移动。
+        拖动角色即可脱离窗口，摆在喜欢的位置。
       </p>
       <p>聊天窗口可以随时收起，ENE 仍留在桌面上。</p>
       <hr />
@@ -802,10 +811,7 @@ export function Prototype() {
           transformOrigin: "60% 53.5%",
         }}
       >
-        <img
-          src={`./assets/ene-${state.pose}.png`}
-          alt="ENE 坐在练习窗口的边缘"
-        />
+        <AnimatedCharacter state={state} aria-label="ENE 坐在练习窗口的边缘" />
       </div>
       {state.bubbleVisible && (
         <div className="preview-speech">

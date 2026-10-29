@@ -24,12 +24,12 @@ This image illustrates the interaction. The native Windows prototype can follow 
 
 - Independent transparent character, dragging, scaling, tray and separate settings.
 - Five-second bubbles and on-demand current-run history.
-- Three static poses and optional rest switching after 90 seconds without interaction.
+- Three poses with subtle breathing and sway; optional rest switching after 90 seconds without interaction.
 - Windows system voice audition, speech pace, demo-reply narration and interruption.
 - Real DSH runtime connected to a local synthetic endpoint; **real model conversations are not connected yet**.
-- External local-neural-TTS benchmarks; Live2D part preparation, without a finished rig or animation.
+- External local-neural-TTS benchmarks; Live2D part preparation, without a finished Cubism rig.
 
-The local Windows package passed 20 native checks. Encrypted memory, cross-device synchronization, Mac and mobile clients remain future work. See [progress](docs/progress/2026-10-29.en.md) and the [document index](docs/文档目录.md).
+The local Windows package passed 22 native checks. Encrypted memory, cross-device synchronization, Mac and mobile clients remain future work. See [progress](docs/progress/2026-10-29.en.md) and the [document index](docs/文档目录.md).
 
 ## Run
 
@@ -60,3 +60,7 @@ No API key is needed for this demo. Future provider credentials stay local and m
 ## License
 
 **Noncommercial use; retain attribution and source when sharing or modifying.** Code: PolyForm Noncommercial 1.0.0. Documentation and the three character images: CC BY-NC 4.0. Credit `Pain-ENE / ENE Desktop` and link to this repository. See [license details](使用许可.md). Dependencies retain their own licenses.
+
+## Animated artwork
+
+preview.5 adds breathing, gentle head movement and hair sway for all three poses, with a motion toggle. This is real-time flat-art deformation; a finished Cubism model, blink and mouth rig remain pending. [Progress](docs/en/animated-artwork-progress.md).

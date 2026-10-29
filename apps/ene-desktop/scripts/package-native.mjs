@@ -57,7 +57,7 @@ function ignore(name) {
 }
 const outputs = await packager({
   dir: root,
-  out: resolve(root, "../../releases/0.1.0-preview.4"),
+  out: resolve(root, "../../releases/0.1.0-preview.5"),
   name: "ENE",
   executableName: "ENE",
   platform: "win32",

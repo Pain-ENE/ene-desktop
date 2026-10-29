@@ -1,3 +1,4 @@
+import { motionClock, parameters } from "./character-motion.mjs";
 import {
   app,
   BrowserWindow,
@@ -35,6 +36,9 @@ let controller,
 const windows = new Map();
 const surfaceSizes = new Map();
 let state = {
+  motionEnabled: true,
+  motionActive: false,
+  motionOrigin: Date.now(),
   phase: "idle",
   scale: 0.8,
   pose: "idle",
@@ -261,6 +265,8 @@ function updateMousePassthrough() {
       hitImage,
       pet.getContentBounds(),
       screen.getCursorScreenPoint(),
+      24,
+      { pose: state.pose, params: parameters(motionClock(state.motionOrigin), state.motionEnabled && state.motionActive && !["stopped", "stopping"].includes(state.phase), state.speechStatus === "playing") },
     ),
   );
 }
@@ -443,6 +449,12 @@ async function dispatch(action, value) {
         });
       break;
     }
+    case "motion-active":
+      state.motionActive = value === true;
+      break;
+    case "motion-enabled":
+      broadcast({ motionEnabled: value === true });
+      break;
     case "state":
       return state;
     case "windows":
@@ -610,11 +622,12 @@ function validPoint(value) {
   );
 }
 const allowed = {
-  pet: ["state", "chat", "menu", "drag-start", "drag-move", "drag-end"],
+  pet: ["motion-active", "state", "chat", "menu", "drag-start", "drag-move", "drag-end"],
   chat: ["state", "send", "stop", "resume", "chat"],
   bubble: ["state", "open-history", "bubble-hold", "bubble-height"],
   controls: ["state", "chat", "settings", "stop"],
   settings: [
+    "motion-enabled",
     "state",
     "scale",
     "pose",
@@ -813,6 +826,40 @@ async function runSmoke() {
     }
     assert.equal(windows.get("pet").getParentWindow(), null);
     report.checks.push("independent_secure_windows");
+    const { createHash } = await import("node:crypto");
+    const actor = windows.get("pet");
+    const pixels = async () => (await actor.webContents.capturePage()).toPNG();
+    const canvasState = () => actor.webContents.executeJavaScript(`(() => {const c=document.querySelector('canvas');return c ? {renderer:c.dataset.renderer, frames:Number(c.dataset.frames), visible:getComputedStyle(c).visibility} : null})()`);
+    report.motion = {};
+    for (const pose of ["idle", "seated", "prone"]) {
+      await changePose(pose);
+      await new Promise(resolve => setTimeout(resolve, 700));
+      const before = await canvasState();
+      assert.equal(before?.renderer, "flat-art-warp");
+      assert.equal(before.visible, "visible");
+      const frameA = await pixels();
+      await new Promise(resolve => setTimeout(resolve, 700));
+      const frameB = await pixels();
+      const after = await canvasState();
+      assert.ok(after.frames > before.frames + 5, `${pose}: drawing did not advance`);
+      assert.notEqual(createHash("sha256").update(frameA).digest("hex"), createHash("sha256").update(frameB).digest("hex"), `${pose}: pixels did not change`);
+      await writeFile(join(out, `motion-${pose}.png`), frameB);
+      report.motion[pose] = {framesIn700ms: after.frames-before.frames, pixelsChanged:true};
+    }
+    report.checks.push("three_pose_GPU_animation_changes_actual_pixels");
+    await dispatch("motion-enabled", false);
+    await new Promise(resolve => setTimeout(resolve, 150));
+    const paused = await canvasState();
+    const stillA = await pixels();
+    await new Promise(resolve => setTimeout(resolve, 250));
+    assert.equal((await canvasState()).frames, paused.frames);
+    assert.deepEqual(await pixels(), stillA);
+    assert.equal(state.motionActive, false);
+    report.checks.push("motion_toggle_stops_drawing_and_restores_static_image");
+    await dispatch("motion-enabled", true);
+    await new Promise(resolve => setTimeout(resolve, 200));
+    assert.ok((await canvasState()).frames > paused.frames);
+    await changePose("idle");
     const voices = await dispatch("speech-voices");
     assert.ok(voices.some((v) => v.language === "zh-CN"));
     await dispatch("speech-config", {
