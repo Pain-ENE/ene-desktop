@@ -1,0 +1,11 @@
+{
+  "name": "ene-dsh-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pinned DSH runtime for ENE isolated prebirth integration tests",
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.2.2-alpha.2",
+    "@deepseek-ai/dsh-sdk-client": "0.2.2-alpha.2"
+  }
+}

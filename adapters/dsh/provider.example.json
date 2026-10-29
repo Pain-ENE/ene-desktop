@@ -1,0 +1,13 @@
+{
+  "status": "configuration_design_not_a_live_connection",
+  "routeId": "ene-gateway",
+  "protocol": "openai-completions",
+  "baseURL": null,
+  "model": null,
+  "contextWindow": null,
+  "maxOutputTokens": null,
+  "credentialReference": "ENE_GATEWAY_API_KEY",
+  "credentialValue": "DO_NOT_PUT_A_KEY_HERE",
+  "alternativeProtocols": ["anthropic-messages", "openai-responses"],
+  "identityPolicy": "provider_and_model_are_capabilities_not_identity"
+}

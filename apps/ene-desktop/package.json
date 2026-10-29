@@ -1,0 +1,34 @@
+{
+  "name": "ene-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "preview": "vite preview",
+    "test:sites": "node --test tests/sites-worker.test.mjs",
+    "prepare:native": "node scripts/prepare-native.mjs",
+    "desktop": "npm run prepare:native && npm run build && electron .",
+    "smoke:native": "electron . --smoke-test",
+    "package:win": "node scripts/package-native.mjs"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.2.2-alpha.2",
+    "@deepseek-ai/dsh-sdk-client": "0.2.2-alpha.2",
+    "@vitejs/plugin-react": "5.0.4",
+    "lucide-react": "1.63.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "vite": "6.4.2"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "45.1.0",
+    "prettier": "3.9.10"
+  },
+  "main": "native/main.mjs",
+  "description": "ENE prebirth desktop companion",
+  "author": "ENE project",
+  "license": "UNLICENSED"
+}

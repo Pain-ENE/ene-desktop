@@ -1,0 +1,30 @@
+# Prebirth synthetic test profile. No model-visible OS or filesystem tools.
+- id: tool-fs
+  disabled: true
+- id: tool-working-directory
+  disabled: true
+- id: persistent-bash
+  disabled: true
+- id: persistent-pwsh
+  disabled: true
+- id: sandbox-policy
+  config:
+    mode: read-only
+    workspaceRoot: !!js process.cwd()
+- id: system-prompt
+  config:
+    includeHarnessIdentity: false
+    includeRuntimeContext: false
+    personaPrefix: >-
+      You are ENE in a synthetic, prebirth integration test.
+      No real person or private memory is present. Respond using text only.
+      Do not attempt to use tools or perform external actions.
+- id: llm-retry
+  disabled: true
+- id: llm-deepseek
+  config:
+    apiKeyEnv: DEEPSEEK_API_KEY
+    baseURL: !!js process.env.DEEPSEEK_BASE_URL
+    thinking: disabled
+    streamIdleTimeoutMs: 3000
+    defaultContextWindow: 1000000

@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/deepseek-ai/deepseek-harness.git",
+  "commit": "f3803c96974ad4a94195fb97e5c637e9c2a3afe3",
+  "root_package_version": "0.2.2-alpha.2",
+  "declared_package_manager": "pnpm@11.28.5",
+  "declared_node_engine": ">=24.9.0",
+  "checkout_kind": "shallow_sparse_readonly_review_baseline",
+  "reviewed_on": "2026-10-28",
+  "dependencies_installed": true,
+  "runtime_smoke_passed": true,
+  "upstream_modified": false,
+  "runtime_smoke_scope": "official npm runtime with local synthetic Messages model; no real API",
+  "runtime_package_lock": "runtime/dsh/package-lock.json"
+}

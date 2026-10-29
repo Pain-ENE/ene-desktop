@@ -1,0 +1,18 @@
+# Local synthetic compatibility check; never contains real credentials.
+- insert:
+    - id: llm-pi-ai
+      name: '@deepseek-ai/dsh-llm-pi-ai'
+      config:
+        providers:
+          ene-gateway:
+            displayName: ENE synthetic compatible endpoint
+            apiKeyEnv: ENE_GATEWAY_API_KEY
+            api: openai-completions
+            baseURL: !!js process.env.ENE_GATEWAY_BASE_URL
+            defaultContextWindow: 8192
+            defaultMaxTokens: 512
+            models:
+              - id: ene-synthetic-chat
+                name: ENE synthetic chat
+                contextWindow: 8192
+                reasoningEfforts: false

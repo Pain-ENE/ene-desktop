@@ -1,0 +1,334 @@
+{
+  "status": "scaffold_not_rig_ready",
+  "source": "design/drafts/ene-idle-v02-visible-hands.png",
+  "canvas": {
+    "width": 1024,
+    "height": 1536
+  },
+  "coordinates": "all layers share full source canvas; L/R are character anatomical directions",
+  "groups": [
+    {
+      "group": "01_BackHair",
+      "layers": [
+        {
+          "name": "Ponytail_L_root",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Ponytail_L_mid",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Ponytail_L_tip",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Ponytail_R_root",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Ponytail_R_mid",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Ponytail_R_tip",
+          "status": "not_extracted",
+          "image": null
+        }
+      ]
+    },
+    {
+      "group": "02_Body",
+      "layers": [
+        {
+          "name": "Neck",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Torso_jacket",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Collar_back",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Collar_front",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Zipper",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Skirt_back",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Skirt_front",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Leg_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Leg_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Digital_fragments",
+          "status": "not_extracted",
+          "image": null
+        }
+      ]
+    },
+    {
+      "group": "03_Arms",
+      "layers": [
+        {
+          "name": "UpperArm_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Forearm_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Cuff_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Hand_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "UpperArm_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Forearm_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Cuff_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Hand_R",
+          "status": "not_extracted",
+          "image": null
+        }
+      ]
+    },
+    {
+      "group": "04_Face",
+      "layers": [
+        {
+          "name": "Face_base",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Ear_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Ear_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Cheek_device_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Cheek_device_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Eyebrow_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Eyebrow_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "EyeWhite_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Iris_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "EyeHighlight_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "UpperLid_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "LowerLid_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "EyeWhite_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Iris_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "EyeHighlight_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "UpperLid_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "LowerLid_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Mouth_cavity",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Lip_upper",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Lip_lower",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Teeth",
+          "status": "not_extracted",
+          "image": null
+        }
+      ]
+    },
+    {
+      "group": "05_FrontHair",
+      "layers": [
+        {
+          "name": "Bangs_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Bangs_center",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Bangs_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "SideHair_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "SideHair_R",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Ahoge",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Headphone_band",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Headphone_L",
+          "status": "not_extracted",
+          "image": null
+        },
+        {
+          "name": "Headphone_R",
+          "status": "not_extracted",
+          "image": null
+        }
+      ]
+    }
+  ],
+  "parameters": [
+    "ParamAngleX",
+    "ParamAngleY",
+    "ParamAngleZ",
+    "ParamEyeLOpen",
+    "ParamEyeROpen",
+    "ParamEyeBallX",
+    "ParamEyeBallY",
+    "ParamMouthOpenY",
+    "ParamMouthForm",
+    "ParamBrowLY",
+    "ParamBrowRY",
+    "ParamBreath",
+    "ParamBodyAngleX"
+  ],
+  "poses": [
+    "idle",
+    "seated",
+    "prone"
+  ],
+  "requiredExports": [
+    "model3.json",
+    "moc3",
+    "textures",
+    "physics3.json",
+    "motions"
+  ],
+  "generatedCandidatesApproved": false
+}
