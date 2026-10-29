@@ -5,13 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "build": "vite build",
     "preview": "vite preview",
-    "test:sites": "node --test tests/sites-worker.test.mjs",
     "prepare:native": "node scripts/prepare-native.mjs",
     "desktop": "npm run prepare:native && npm run build && electron .",
     "smoke:native": "electron . --smoke-test",
-    "package:win": "node scripts/package-native.mjs"
+    "package:win": "node scripts/package-native.mjs",
+    "test": "node --test tests/pet-hit-test.test.mjs"
   },
   "dependencies": {
     "@deepseek-ai/dsh": "0.2.2-alpha.2",
@@ -30,5 +30,5 @@
   "main": "native/main.mjs",
   "description": "ENE prebirth desktop companion",
   "author": "ENE project",
-  "license": "UNLICENSED"
+  "license": "PolyForm-Noncommercial-1.0.0"
 }

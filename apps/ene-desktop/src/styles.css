@@ -394,9 +394,9 @@ select,
 .sample-browser {
   position: absolute;
   left: 9%;
-  top: 40%;
+  top: 44%;
   width: 77%;
-  height: 70%;
+  height: 52%;
   background: var(--surface);
   border-radius: 13px;
   box-shadow: 0 14px 44px #0000001a;
@@ -474,10 +474,10 @@ select,
 }
 .preview-pet {
   position: absolute;
-  left: 45%;
-  top: -3%;
-  height: 80%;
-  width: 44%;
+  left: 51%;
+  top: 4%;
+  height: 74%;
+  width: 36%;
   pointer-events: none;
 }
 .preview-pet img {

@@ -1,4 +1,4 @@
-> 历史探讨稿，保留原讨论语境；旧技术路线和“尚未实现”状态不代表当前版本。最新状态见 [开发进度](../progress/2026-10-29.zh-CN.md)。
+> 历史探讨稿，保留原讨论语境；旧技术路线和“尚未实现”状态不代表当前版本。最新状态见 [开发进度](../progress/2026-10-29-开发进度.md)。
 > 人格核心争议、恢复与终止优先级等仍未定稿；引用资料不构成法律意见。
 
 # ENE M0：DSH 本地接入验证报告
@@ -35,7 +35,7 @@
 
 ## 已查明的接口限制
 
-官方 `deepseek-official` 在该版本使用 Messages 协议，本轮请求路径为 `/v1/messages`，不能把它简单当作任意 OpenAI chat-completions 网关。其他 API 服务商的接入需选取相应 provider 并验证。
+官方 `deepseek-official` 在该版本使用 Messages 协议，本轮请求路径为 `/v1/messages`，不能把它简单当作任意 Chat Completions 网关。其他 API 服务商的接入需选取相应 provider 并验证。
 
 当前观察到的 SDK 通知为 session.event、session.status；assistant/message 中保存本轮完整回复及流记录。尚未建立桌面可用的逐 token 实时增量通道，不能把收到事件宣称为已有逐字 UI。后续需验证扩展事件，必要时增加受控插件。
 

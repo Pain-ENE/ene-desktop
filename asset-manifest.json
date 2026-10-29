@@ -1,0 +1,10 @@
+{
+  "license": "CC-BY-NC-4.0",
+  "attribution": "Pain-ENE / ENE Desktop — https://github.com/Pain-ENE/ene-desktop",
+  "images": {
+    "apps/ene-desktop/public/assets/ene-idle.png": "71939a5d9d6e0413a0e705cce69ec33fad747ba76def3c3d73e18c7927eaf231",
+    "apps/ene-desktop/public/assets/ene-seated.png": "e54d91e152fd4a57e366902471d51acece8cc9cef5c9b297fb26c4f42e18e7c9",
+    "apps/ene-desktop/public/assets/ene-prone.png": "e96cfd8ba3fa668335a2457eb1b05e9f20c92959b7f213c4770b6177326f264d",
+    "docs/images/窗口停靠示意.jpg": "1aef2d74429cc79fe360444a5641dc88a317ddbf51620e82c0f9d169cdd1f0bb"
+  }
+}

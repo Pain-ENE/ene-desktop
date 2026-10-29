@@ -50,3 +50,9 @@ apps/ene-desktop/adapters/
 apps/ene-desktop/test-fixtures/
 publication-scan*.json
 gitleaks*.json
+
+# Explicitly published images; all other images remain excluded.
+!/apps/ene-desktop/public/assets/ene-idle.png
+!/apps/ene-desktop/public/assets/ene-seated.png
+!/apps/ene-desktop/public/assets/ene-prone.png
+!/docs/images/窗口停靠示意.jpg

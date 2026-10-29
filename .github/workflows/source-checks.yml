@@ -40,5 +40,3 @@ jobs:
         working-directory: apps/ene-desktop
       - run: node --test tests/pet-hit-test.test.mjs
         working-directory: apps/ene-desktop
-      - run: npm run test:sites
-        working-directory: apps/ene-desktop
